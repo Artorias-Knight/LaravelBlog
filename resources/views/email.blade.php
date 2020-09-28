@@ -1,3 +1,12 @@
-<body class="main">
-    <h1>fooooooooooooooo</h1>
-</body>
+@component('mail::message')
+ddddddddddddddddd
+
+@component('mail::panel')
+sddddddddddddd
+@endcomponent
+
+@component('mail::subcopy')
+    fffffffffffffffff
+@endcomponent
+dddddddddddddddddddddddd
+@endcomponent

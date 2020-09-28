@@ -7,12 +7,11 @@
 
     <title>Send Email</title>
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('/css/home.css')}}">   --}}
+    <link rel="stylesheet" href="{{asset('/css/home.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.js" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
-    {{-- <link href="resources/css/styles.css" rel="stylesheet" type="text/css"> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="antialiased">
@@ -35,9 +34,11 @@
 
 
                 <div class="form-group">
-                    <label for="">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name">
-                    @error('name')
+
+                    <label for="">Assunto</label>
+                    <input type="text" class="form-control" name="mailsubject" id="mailsubject">
+
+                    @error('mailsubject')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
@@ -60,9 +61,10 @@
                 <div class="form-group">
                     <label for="file">Arquivos</label>
                     <input type="file" class="form-control-file" name="files[]" id="file" multiple>
+                    <small id="help" class="form-text text-muted">Por favor, envie arquivos compactados.</small>
                 </div>
 
-                <button type="submit" name="button" id="button" class="btn btn-primary" btn-lg btn-block">Enviar  <i class="fas fa-paper-plane"></i> </button>
+                <button type="submit" name="button" id="button" class="btn btn-primary">Enviar  <i class="fas fa-paper-plane"></i> </button>
 
             </form>
 

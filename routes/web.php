@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MailController;
 use App\Mail\WelcomeMail;
+use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/email', function() {
-    //return new \App\Mail\WelcomeMail();
-    \Illuminate\Support\Facades\Mail::send(new \App\Mail\WelcomeMail());
+Route::get('/email', function () {
+    return $this->markdown('email');
 });
+
 
 Route::get('/', function () {
     return view('welcome');

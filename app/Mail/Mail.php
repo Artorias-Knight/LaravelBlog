@@ -10,14 +10,18 @@ class Mail extends Mailable
 {
     use Queueable, SerializesModels;
     private $paths = array();
+    private $mailsubject;
+    private $content;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($paths)
+    public function __construct($paths, $mailsubject, $content)
     {
         $this->paths = $paths;
+        $this->mailsubject = $mailsubject;
+        $this->content = $content;
     }
 
     /**
@@ -27,9 +31,11 @@ class Mail extends Mailable
      */
     public function build()
     {
+        // pera
+        // como?
         $this->to('jhonatamns@outlook.com');
-        $this->subject('asd');
-        $email = $this->markdown('WelcomeMail');
+        $this->subject($this->mailsubject);
+        $email = $this->markdown('email', ['subject' => $this->mailsubject], ['content' => $this->content]);
 
         foreach ($this->paths as $files) {
             $email->attachFromStorage("$files");
