@@ -21,7 +21,7 @@
     <div class="container mt-5">
 
         <div class="email">
-            <h1>ENVIAR EMAIL</h1>
+            <h1>Relatório financeiro semanal</h1>
             @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
 
-                    <label for="">Assunto</label>
+                    <label for="">Nome</label>
                     <input type="text" class="form-control" name="mailsubject" id="mailsubject">
 
                     @error('mailsubject')
@@ -48,7 +48,7 @@
 
                 {{-- Content --}}
                 <div class="form-group">
-                    <label for="">Conteudo</label>
+                    <label for="">Assunto</label>
                     <textarea class="form-control" name="content" id="content" rows="3"></textarea>
                     @error('content')
                         <div class="alert alert-danger">
@@ -65,6 +65,7 @@
                 </div>
 
                 <button type="submit" name="button" id="button" class="btn btn-primary">Enviar  <i class="fas fa-paper-plane"></i> </button>
+
 
             </form>
 

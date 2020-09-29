@@ -12,11 +12,7 @@ class Mail extends Mailable
     private $paths = array();
     private $mailsubject;
     private $content;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+
     public function __construct($paths, $mailsubject, $content)
     {
         $this->paths = $paths;
@@ -24,18 +20,15 @@ class Mail extends Mailable
         $this->content = $content;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        // pera
-        // como?
         $this->to('jhonatamns@outlook.com');
         $this->subject($this->mailsubject);
-        $email = $this->markdown('email', ['subject' => $this->mailsubject], ['content' => $this->content]);
+        $data = array([
+            'content' => $this->content,
+            'subject' => $this->mailsubject
+        ]);
+        $email = $this->markdown('email',$data);
 
         foreach ($this->paths as $files) {
             $email->attachFromStorage("$files");

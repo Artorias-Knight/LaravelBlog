@@ -1,12 +1,7 @@
 @component('mail::message')
-ddddddddddddddddd
-
-@component('mail::panel')
-sddddddddddddd
-@endcomponent
-
+    {{$data[0]['mailsubject']}}
 @component('mail::subcopy')
-    fffffffffffffffff
+    {{$data[0]['content']}}
 @endcomponent
-dddddddddddddddddddddddd
+
 @endcomponent

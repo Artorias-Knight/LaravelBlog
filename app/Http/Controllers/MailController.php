@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MailRequest;
 use App\Jobs\JobMail;
-use App\Mail\Mail;
-use App\Mail\WelcomeMail;
-use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class MailController extends Controller
 {
