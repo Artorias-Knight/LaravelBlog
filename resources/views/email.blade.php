@@ -1,7 +1,7 @@
 @component('mail::message')
-    {{$data[0]['mailsubject']}}
-@component('mail::subcopy')
-    {{$data[0]['content']}}
+### Jhonatam
+@component('mail::panel')
+Relatório financeiro da igreja x
 @endcomponent
 
 @endcomponent

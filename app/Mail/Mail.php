@@ -22,7 +22,7 @@ class Mail extends Mailable
 
     public function build()
     {
-        $this->to('jhonatamns@outlook.com');
+        $this->to('sendemail');
         $this->subject($this->mailsubject);
         $data = array([
             'content' => $this->content,
